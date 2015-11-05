@@ -4,7 +4,9 @@
 
 Events with Galaxy-related content are listed here.
 
-<div class='left'><a href='http://bit.ly/gxycal'><img src='Images/Icons/CalendarIcon.gif' /></a></div> The events listed here are also available in the *[Galaxy Events Google Calendar](http://bit.ly/gxycal)*.  The *[Galaxy Other Events Google Calendar](http://bit.ly/gxyothercal)* lists additional events and deadline that are relevant to the Galaxy Community, but that are not known to feature significant Galaxy content. The [Galaxy Events RSS feed](http://bit.ly/gxycalrss) <a href='http://bit.ly/gxycalrss'><img src='Images/Icons/RSSIcon16x16.gif' /></a> and [Galaxy Other Events RSS feed](http://bit.ly/gxyothercalrss) <a href='http://bit.ly/gxyothercalrss'><img src='Images/Icons/RSSIcon16x16.gif' /></a> are also available.
+<div class='left'><a href='http://bit.ly/gxycal'><img src='Images/Icons/CalendarIcon.gif' /></a></div> 
+
+The events listed here are also available in the *[Galaxy Events Google Calendar](http://bit.ly/gxycal)*.  The *[Galaxy Other Events Google Calendar](http://bit.ly/gxyothercal)* lists additional events and deadline that are relevant to the Galaxy Community, but that are not known to feature significant Galaxy content. The [Galaxy Events RSS feed](http://bit.ly/gxycalrss) <a href='http://bit.ly/gxycalrss'><img src='Images/Icons/RSSIcon16x16.gif' /></a> and [Galaxy Other Events RSS feed](http://bit.ly/gxyothercalrss) <a href='http://bit.ly/gxyothercalrss'><img src='Images/Icons/RSSIcon16x16.gif' /></a> are also available.
 
 <br />If you know of any event that should be added to this page and/or to the Galaxy Event Calendar, please add it here or send it to outreach@galaxyproject.org.
 
