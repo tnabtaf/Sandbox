@@ -159,7 +159,7 @@ For events prior to this year, see the **[Events Archive](Events/Archive)**.
 <table>
   <tr>
     <td style=" border: none"> <a href='Teach/Trainers'><img src='Images/Icons/GTN32.png' width="24" /></a> </td>
-    <td style=" border: none"> ~- <a href=Teach/Trainers>Designates a training event offered by GTN member(s)</a> -~ </td>
+    <td style=" border: none"> <span style="font-size: smaller;"> <a href=Teach/Trainers>Designates a training event offered by GTN member(s)</a> </span> </td>
   </tr>
 </table>
 
