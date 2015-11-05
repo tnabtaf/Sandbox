@@ -36,7 +36,7 @@ For events prior to this year, see the **[Events Archive](Events/Archive)**.
   </tr>
   <tr>
     <th> September 14-18 </th>
-    <td> *[Using Galaxy for Analysis of High Throughput Sequence Data](http://training.bioinformatics.ucdavis.edu/2015/01/13/using-galaxy-for-analysis-of-high-throughput-sequence-data-september-14-18-2015/)* </td>
+    <td> <strong><a href="http://training.bioinformatics.ucdavis.edu/2015/01/13/using-galaxy-for-analysis-of-high-throughput-sequence-data-september-14-18-2015/">Using Galaxy for Analysis of High Throughput Sequence Data</a></strong> </td>
     <td> INCLUDE(Events/Badges/NorthAmerica) [UC Davis Bioinformatics Core](http://bioinformatics.ucdavis.edu/), Davis, California, United States </td>
     <td> <div class='right'><a href='http://bit.ly/gxytrnUCDavis'><img src='Images/GalaxyLogos/GTN16.png' /></a></div> MAIL_TO(bioinformatics.core@ucdavis.edu, UC Davis Bioinformatics) </td>
   </tr>
