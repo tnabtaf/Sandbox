@@ -108,7 +108,7 @@ This session covers the tool and ToolShed requirements for using reference data 
     **open a terminal/shell and go to galaxy dir**
     ``` 
 cd /home/galaxy/Desktop/Data_Managers/galaxy/galaxy-central 
-      ```
+    ```
 
       **start a virtual env**
       ```
