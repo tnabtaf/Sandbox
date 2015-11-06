@@ -87,7 +87,7 @@ This session covers the tool and ToolShed requirements for using reference data 
         ```
 
       4. Find and click on "bwa_index.loc.sample" 
-        ```
+       ```
 #This is a sample file distributed with Galaxy that enables tools
 #to use a directory of BWA indexed sequences data files. You will need
 #to create these data files and then create a bwa_index.loc file
