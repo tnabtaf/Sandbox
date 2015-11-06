@@ -57,33 +57,33 @@ This session covers the tool and ToolShed requirements for using reference data 
       2. Find and click on "bwa_wrapper.xml" and note the section that uses indexed data:
         ```xml
         <conditional name="genomeSource">
-        <param name="refGenomeSource" type="select" label="Will you select a reference genome from your history or use a built-in index?">
-        <option value="indexed">Use a built-in index</option>
-        <option value="history">Use one from the history</option>
-        </param>
-        <when value="indexed">
-        <param name="indices" type="select" label="Select a reference genome">
-        <options from_data_table="bwa_indexes">
-        <filter type="sort_by" column="2" />
-        <validator type="no_options" message="No indexes are available" />
-        </options>
-        </param>
-        </when>
-        <when value="history">
-        <param name="ownFile" type="data" format="fasta" metadata_name="dbkey" label="Select a reference from history" />
-        </when>
+          <param name="refGenomeSource" type="select" label="Will you select a reference genome from your history or use a built-in index?">
+            <option value="indexed">Use a built-in index</option>
+            <option value="history">Use one from the history</option>
+          </param>
+          <when value="indexed">
+            <param name="indices" type="select" label="Select a reference genome">
+              <options from_data_table="bwa_indexes">
+                <filter type="sort_by" column="2" />
+                <validator type="no_options" message="No indexes are available" />
+              </options>
+            </param>
+          </when>
+          <when value="history">
+            <param name="ownFile" type="data" format="fasta" metadata_name="dbkey" label="Select a reference from history" />
+          </when>
         </conditional>
-        ```
+          ```
 
       3. Find and click on "tool_data_table_conf.xml.sample" which defines the mapping to the "tool-data/bwa_index.loc" file
         ```xml
-        <tables>
+      <tables>
         <!-- Locations of indexes in the BWA mapper format -->
         <table name="bwa_indexes" comment_char="#">
-        <columns>value, dbkey, name, path</columns>
-        <file path="tool-data/bwa_index.loc" />
+          <columns>value, dbkey, name, path</columns>
+          <file path="tool-data/bwa_index.loc" />
         </table>
-        </tables>
+      </tables>
         ```
 
       4. Find and click on "bwa_index.loc.sample" 
@@ -281,43 +281,43 @@ galaxy_data_manager_data_path = tool-data
 * The tool output must have **format="data_manager_json"**
   ```xml
   <outputs>
-  <data name="out_file" format="data_manager_json"/>
-  </outputs>
-  ```
+    <data name="out_file" format="data_manager_json"/>
+    </outputs>
+      ```
   
-* create `tools/data_manager/bwa_index_builder.xml`
-  * http://toolshed.g2.bx.psu.edu/repos/devteam/data_manager_bwa_index_builder/file/367878cb3698/data_manager/bwa_index_builder.xml
-  * Needs requirements tag for bwa application
-  * input params:
-    * a select param with options from_data_table="all_fasta"
-    * a sequence_name text param   
-    * a sequence_id text param  
-  * outputs data param must be format
-  * transcribe the xml manually
-    * or you can download the file from: http://toolshed.g2.bx.psu.edu/repos/devteam/data_manager_bwa_index_builder/raw-file/367878cb3698/data_manager/bwa_index_builder.xml
-* create `tools/data_manager/bwa_index_builder.py`
-  * http://toolshed.g2.bx.psu.edu/repos/devteam/data_manager_bwa_index_builder/file/367878cb3698/data_manager/bwa_index_builder.py
+    * create `tools/data_manager/bwa_index_builder.xml`
+      * http://toolshed.g2.bx.psu.edu/repos/devteam/data_manager_bwa_index_builder/file/367878cb3698/data_manager/bwa_index_builder.xml
+      * Needs requirements tag for bwa application
+      * input params:
+        * a select param with options from_data_table="all_fasta"
+        * a sequence_name text param   
+        * a sequence_id text param  
+      * outputs data param must be format
+      * transcribe the xml manually
+        * or you can download the file from: http://toolshed.g2.bx.psu.edu/repos/devteam/data_manager_bwa_index_builder/raw-file/367878cb3698/data_manager/bwa_index_builder.xml
+    * create `tools/data_manager/bwa_index_builder.py`
+      * http://toolshed.g2.bx.psu.edu/repos/devteam/data_manager_bwa_index_builder/file/367878cb3698/data_manager/bwa_index_builder.py
 * Configure Galaxy to use this Data Manager tool
   * add a data_manager entry inside data_managers tag in `data_mananger_conf.xml`
     ```xml
     <data_manager tool_file="data_manager/bwa_index_builder.xml" id="bwa_index_builder" version="0.0.1">
-    <data_table name="bwa_indexes">
-    <output>
-    <column name="value" />
-    <column name="dbkey" />
-    <column name="name" />
-    <column name="path" output_ref="out_file" >
-    <move type="directory" relativize_symlinks="True">
-    <!-- <source>${path}</source>--> <!-- out_file.extra_files_path is used as base by default --> <!-- if no source, eg for type=directory, then refers to base -->
-    <target base="${GALAXY_DATA_MANAGER_DATA_PATH}">${dbkey}/bwa_index/${value}</target>
-    </move>
-    <value_translation>${GALAXY_DATA_MANAGER_DATA_PATH}/${dbkey}/bwa_index/${value}/${path}</value_translation>
-    <value_translation type="function">abspath</value_translation>
-    </column>
-    </output>
-    </data_table>
+      <data_table name="bwa_indexes">
+        <output>
+          <column name="value" />
+          <column name="dbkey" />
+          <column name="name" />
+          <column name="path" output_ref="out_file" >
+            <move type="directory" relativize_symlinks="True">
+              <!-- <source>${path}</source>--> <!-- out_file.extra_files_path is used as base by default --> <!-- if no source, eg for type=directory, then refers to base -->
+              <target base="${GALAXY_DATA_MANAGER_DATA_PATH}">${dbkey}/bwa_index/${value}</target>
+            </move>
+            <value_translation>${GALAXY_DATA_MANAGER_DATA_PATH}/${dbkey}/bwa_index/${value}/${path}</value_translation>
+            <value_translation type="function">abspath</value_translation>
+          </column>
+        </output>
+      </data_table>
     </data_manager>
-    ```
+      ```
 
 * run installer data_manager to build bwa indexes for sacCer2
 * did it work? 
